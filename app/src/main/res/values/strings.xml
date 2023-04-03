@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Rick and Morty</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="character_list_title">Character List</string>
+    <string name="character_details_title">Character Details</string>
+    <string name="error_without_message">Error without message</string>
+    <string name="save">Save</string>
+
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/details_nav_graph"
+    app:startDestination="@id/characterDetailsMainFragment">
+
+    <fragment
+        android:id="@+id/characterDetailsMainFragment"
+        android:name="com.rickandmorty.presentation.features.character.details.main.CharacterDetailsMainFragment"
+        tools:layout="@layout/character_details_main_fragment"/>
+</navigation>
