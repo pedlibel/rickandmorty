@@ -127,3 +127,25 @@ fun <T1, T2, T3, R> tripleCombineLiveData(
         value = combineFn(liveData1.value, liveData2.value, it)
     }
 }
+
+fun <T> Collection<T>.getListAddingItem(itemToAdd: T): Collection<T> =
+    toMutableList().apply {
+        add(itemToAdd)
+    }
+
+inline fun <E, reified T : Collection<E>> MutableLiveData<T>.addItemAndSetValue(itemToAdd: E) {
+    value?.let { valueCopy ->
+        value = valueCopy.getListAddingItem(itemToAdd) as T
+    }
+}
+
+fun <T> Collection<T>.getListRemovingItem(itemToRemove: T): Collection<T> =
+    toMutableList().apply {
+        remove(itemToRemove)
+    }
+
+inline fun <E, reified T : Collection<E>> MutableLiveData<T>.removeItemAndSetValue(itemToRemove: E) {
+    value?.let { valueCopy ->
+        value = valueCopy.getListRemovingItem(itemToRemove) as T
+    }
+}
